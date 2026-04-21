@@ -1,105 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculadora</title>
+    <title>Calculador Final</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <table>
-        <tr>
-            <td colspan="4">
-                <form>
-                    <input class="inputStyle" id="inputID" placeholder="0">
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="lightButton" onclick="cleanInput()">C</button>
-            </td>
-            <td>
-                <button class="lightButton" onclick="inverso()">+/-</button>
-            </td>
-            <td>
-                <button class="lightButton" onclick="porciento()">%</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="operacionFunction('/')">÷</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="darkButton" onclick="add(7)">7</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add(8)">8</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add(9)">9</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="operacionFunction('*')">x</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="darkButton" onclick="add(4)">4</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add(5)">5</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add(6)">6</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="operacionFunction('-')">-</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="darkButton" onclick="add(1)">1</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add(2)">2</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add(3)">3</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="operacionFunction('+')">+</button>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <button class="ceroButton darkButton" onclick="add(0)">0</button>
-            </td>
-            <td>
-                <button class="darkButton" onclick="add('.')">,</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="igual()">=</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="acentButton" onclick="cuadrado()">x&#178</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="cubo()">x&#179</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="pi()">PI</button>
-            </td>
-            <td>
-                <button class="acentButton" onclick="raiz()">&radic;</button>
-            </td>
-        </tr>
-    </table>
+
+    <button id="toggleBtn">⟳ Landscape</button>
+
+    <div class="calc" id="calc">
+        <div class="inner">
+
+            <!--Display-->
+            <div class="display">
+                <div class="expr" id="expr"></div>
+                <div class="main" id="main">0</div>
+            </div>
+
+            <!--Panel Científico-->
+            <div class="sci-panel" id="sciPanel">
+                <!--Fila 1-->
+                <button class="s" data-a="paren" data-v="(">(</button>
+                <button class="s" data-a="paren" data-v=")">)</button>
+                <button class="s" data-a="mc" data-v="mc">mc</button>
+                <button class="s" data-a="mplus" data-v="m+">m+</button>
+                <button class="s" data-a="mminus" data-v="m-">m-</button>
+                <button class="s" data-a="mr" data-v="mr">mr</button>
+                <!--Fila 2-->
+                <button class="s" id="btn2nd" data-a="second">2nd</button>
+                <button class="s" data-a="square">x²</button>
+                <button class="s" data-a="cube">x³</button>
+                <button class="s" data-a="pow">xʸ</button>
+                <button class="s" data-a="expE">eˣ</button>
+                <button class="s" data-a="pow10">10ˣ</button>
+                <!--Fila 3-->
+                <button class="s" data-a="recip">¹/x</button>
+                <button class="s" data-a="sqrt2">²√x</button>
+                <button class="s" data-a="sqrt3">³√x</button>
+                <button class="s" data-a="sqrty">ʸ√x</button>
+                <button class="s" data-a="ln">ln</button>
+                <button class="s" data-a="log">log₁₀</button>
+                <!--Fila 4-->
+                <button class="s" data-a="fact">x!</button>
+                <button class="s" data-a="sin">sin</button>
+                <button class="s" data-a="cos">cos</button>
+                <button class="s" data-a="tan">tan</button>
+                <button class="s" data-a="eConst">e</button>
+                <button class="s" data-a="ee">EE</button>
+                <!--Fila 5-->
+                <button class="s" id="radBtn" data-a="radDeg">Rad</button>
+                <button class="s" data-a="sinh">sinh</button>
+                <button class="s" data-a="cosh">cosh</button>
+                <button class="s" data-a="tanh">tanh</button>
+                <button class="s" data-a="pi">π</button>
+                <button class="s" data-a="rand">Rand</button>
+            </div>
+
+            <!--Panel Básico-->
+            <div class="basic" id="basicPanel">
+                <button class="btn l" data-a="clear">C</button>
+                <button class="btn l" data-a="sign">+/-</button>
+                <button class="btn l" data-a="pct">%</button>
+                <button class="btn o" data-a="op" data-v="/">÷</button>
+
+                <button class="btn d" data-a="dig" data-v="7">7</button>
+                <button class="btn d" data-a="dig" data-v="8">8</button>
+                <button class="btn d" data-a="dig" data-v="9">9</button>
+                <button class="btn o" data-a="op" data-v="*">×</button>
+
+                <button class="btn d" data-a="dig" data-v="4">4</button>
+                <button class="btn d" data-a="dig" data-v="5">5</button>
+                <button class="btn d" data-a="dig" data-v="6">6</button>
+                <button class="btn o" data-a="op" data-v="-">−</button>
+
+                <button class="btn d" data-a="dig" data-v="1">1</button>
+                <button class="btn d" data-a="dig" data-v="2">2</button>
+                <button class="btn d" data-a="dig" data-v="3">3</button>
+                <button class="btn o" data-a="op" data-v="+">+</button>
+
+                <button class="btn d zero" data-a="dig" data-v="0">0</button>
+                <button class="btn d" data-a="dig" data-v=",">,</button>
+                <button class="btn o" data-a="eq">=</button>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 
