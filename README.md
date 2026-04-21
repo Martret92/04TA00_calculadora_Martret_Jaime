@@ -1,1 +1,2 @@
 1er commit hecho, es funcional pero no he conseguido que al girar sea calculadora cientifica. 
+2ndo commit hecho, ya es cientifica al rotar y con un boton portrait/landscape que hace la misma funcion. Funcionan correctamente todas las operaciones matematicas pero hay ciertas operaciones que deberia modificar para que se muestren de forma mas limpia por pantalla y asi hacerla mas fiel a la original. 
